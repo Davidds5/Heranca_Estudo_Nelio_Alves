@@ -19,6 +19,39 @@ public class Program {
         BusinessAccount acc4 =  (BusinessAccount)acc2;
         acc4.loan(100.0);
 
+//        BusinessAccount acc5 =  (BusinessAccount)acc3;
+//        acc5.loan(100.0);
+
+        // nao se pode ja que acc3 nao e Business mas sim Savings
+        if (acc3 instanceof  BusinessAccount){
+            BusinessAccount acc5 = (BusinessAccount)acc3;
+            acc5.loan(200.0);
+            System.out.println("Loan !");
+        }
+        if (acc3 instanceof SavingsAccount){
+            SavingsAccount acc5 = (SavingsAccount) acc3;
+            acc5.updateBalance();
+            System.out.println("UpDate !");
+        }
+
+
+        // acessando o metodo withdraw da class Account na SavingsAccount
+        Account acc01 = new Account(1001, "Alex", 1000.0);
+        acc01.withdraw(200.0);
+        System.out.println("Valor do saque #1 ");
+        System.out.println(acc01.getBalance());
+
+        // agr podemos acessao o metodo withdraw da class Account
+        Account acc02 = new SavingsAccount(0.01, 1005, "Bob", 1000.0 );
+        acc02.withdraw(200.0);
+        System.out.println("Valor do saque #2 ");
+        System.out.println(acc02.getBalance());
+
+        Account acc03 = new BusinessAccount(500.0, 1003, "David",1000.0 );
+        acc03.withdraw(200.0);
+        System.out.println("Valor de saque #3");
+        System.out.println(acc03.getBalance());
+
 
 
 

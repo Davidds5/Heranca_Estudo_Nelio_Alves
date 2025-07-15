@@ -1,6 +1,7 @@
 package Estudo01Base.application;
 
-public class SavingsAccount extends Account {
+// final e para evitar que a class seja erdada, noa se pode usar o extends para ela
+public final class  SavingsAccount extends Account {
     private Double interestRate;
 
     public SavingsAccount(){
@@ -21,5 +22,9 @@ public class SavingsAccount extends Account {
     }
     public void updateBalance(){
         balance += balance * interestRate;
+    }
+    @Override
+    public void withdraw(double amount){
+        balance -= amount ;
     }
 }

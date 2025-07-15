@@ -1,5 +1,6 @@
 package Estudo02Base;
 
+// aluno pode usar os metodos de pessoa ou criar os seus proprios metodos
 // aluno sera a class derivada
 public class Aluno extends Pessoa{
     private String curso;
