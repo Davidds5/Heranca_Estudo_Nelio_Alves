@@ -52,7 +52,16 @@ public class Program {
         System.out.println("Valor de saque #3");
         System.out.println(acc03.getBalance());
 
+        // estudo sobre polimorfismo
 
+        Account x = new Account(1020, "Alex", 1200.0);
+        Account y = new SavingsAccount(0.01, 1023,"Maria", 1200.0);
+
+        x.withdraw(50.0);
+        y.withdraw(50.0);
+
+        System.out.println(y.getBalance());
+        System.out.println(x.getBalance());
 
 
     }
