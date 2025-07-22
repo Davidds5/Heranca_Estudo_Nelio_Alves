@@ -18,7 +18,7 @@ public class Program {
 
         do {
             System.out.println("=== MENU DE ESCOLHA ===");
-            System.out.println("1 - Cadrasta Usuario");
+            System.out.println("1 - Cadastra Usuario");
             System.out.println("2 - Lista Usuarios");
             System.out.println("3 - Busca Usuario por nome");
             System.out.println("0 - Sair");
@@ -28,7 +28,7 @@ public class Program {
 
             switch (op) {
                 case 1:
-                    System.out.println("Quantos usuarios deseja cadrasta: ");
+                    System.out.println("Quantos usuarios deseja cadastra: ");
                     int N = sc.nextInt();
                     sc.nextLine();
 
@@ -55,10 +55,12 @@ public class Program {
                             int pontos = sc.nextInt();
 
                             usuariosList.add(new Cliente(nome, email, pontos));
-                            break;
+
 
                         }
                     }
+                    break;
+
                 case 2:
                     System.out.println("Lista de usuarios");
                     for (Usuario usuario : usuariosList) {
@@ -71,16 +73,16 @@ public class Program {
                     System.out.println("=== Busca usuario por nome ===");
                     System.out.print("Informe o nome que deseja busca: ");
                     String nomeBusca = sc.nextLine();
-                    boolean encotrado = false;
+                    boolean encontrado = false;
 
                     for (Usuario usuario : usuariosList) {
                         if (usuario.getNome().equalsIgnoreCase(nomeBusca)) {
-                            encotrado = true;
+                            encontrado = true;
                             System.out.println("Nome encotrado com sucesso!!");
-                            System.out.print(usuario.getNome());
+                            System.out.print(usuario);
                         }
                     }
-                    if (!encotrado) {
+                    if (!encontrado) {
                         System.out.println("Nome nao encotrado.");
                     }
                     break;
